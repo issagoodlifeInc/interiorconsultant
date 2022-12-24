@@ -33,6 +33,7 @@ li {
 
 button {
   border: none;
+  background: var(--black);
 }
 
 /* font-family: 'Crimson Pro', serif; [Logo 200]
@@ -51,12 +52,15 @@ body {
 /* Material Icons */
 .material-symbols-outlined {
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+  color: var(--white);
+  font-size: 2rem;
+  transition: opacity, scale 200ms ease-in-out;
 }
 
 header,
 main,
 footer {
-  width: min(1200px, 100vw - 4rem);
+  width: min(1200px, 100vw - 2rem);
   margin-inline: auto;
 }
 
@@ -64,12 +68,13 @@ header nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-block: 1rem;
+  padding-block: 1.3rem;
 }
 
 header nav .navs li > a {
+  font-size: 1.125rem;
   color: var(--white);
-  opacity: 0.4;
+  opacity: 0.6;
   padding-block-end: 0.5rem;
   transition: opacity, border 200ms ease-in-out;
 }
@@ -78,8 +83,17 @@ header nav .navs li > a:hover {
   border-bottom: 2px solid var(--white);
 }
 
-header nav .navs li::after {
-  content: "";
+.logo {
+  font-family: "Crimson Pro", serif;
+  text-transform: uppercase;
+  padding: 0.5rem;
+  border: 1px solid var(--white);
+  font-size: 0.875rem;
+}
+
+.hamburger span:hover {
+  opacity: 0.95;
+  scale: 1.3;
 }
 
 @media screen and (width > 500px) {
@@ -105,7 +119,9 @@ header nav .navs li::after {
     inset: 0 0 0 0;
     background-color: var(--black);
     gap: 2rem;
+    transition: all 300ms ease-in;
   }
+
   .hamburger {
     z-index: 1000;
   }
