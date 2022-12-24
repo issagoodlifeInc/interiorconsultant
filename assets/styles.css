@@ -33,7 +33,7 @@ li {
 
 button {
   border: none;
-  background: var(--black);
+  background-color: var(--black);
 }
 
 /* font-family: 'Crimson Pro', serif; [Logo 200]
@@ -64,11 +64,24 @@ footer {
   margin-inline: auto;
 }
 
-header nav {
+header nav,
+header nav .navs {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+h1,
+.designer__text {
+  font-family: "Lora", serif;
+}
+
+header nav {
   padding-block: 1.3rem;
+}
+
+header nav .navs {
+  gap: 2rem;
 }
 
 header nav .navs li > a {
@@ -96,29 +109,40 @@ header nav .navs li > a:hover {
   scale: 1.3;
 }
 
+.main__content h1 {
+  font-weight: 500;
+  font-size: clamp(2.25rem, 4vw + 1rem, 3rem);
+  padding-block-end: 0.5rem;
+}
+
+.main__text {
+  padding-block: 1rem;
+  font-size: clamp(0.875rem, 3vw, 1.5rem);
+  line-height: 1.5;
+  width: 60%;
+}
+
 @media screen and (width > 500px) {
   .hamburger {
     display: none;
   }
-
-  header .navs {
+}
+@media screen and (width > 700px) {
+  main {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    gap: 2rem;
   }
 }
+
 @media screen and (width < 500px) {
   header nav .navs {
     display: none;
+    place-content: center;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     z-index: 10;
     position: absolute;
     inset: 0 0 0 0;
     background-color: var(--black);
-    gap: 2rem;
     transition: all 300ms ease-in;
   }
 
